@@ -13,6 +13,8 @@ const refs = {
   chekcBox: document.querySelector('#theme-switch-toggle'),
 };
 
+refs.body.classList.add(Theme.LIGHT);
+
 refs.chekcBox.addEventListener('change', onCheckBoxСhange);
 keepsChekcBoxСhange();
 
@@ -37,6 +39,6 @@ function keepsChekcBoxСhange() {
 
 function changeTheme(themes) {
   themes
-    ? refs.body.classList.add(Theme.DARK)
-    : refs.body.classList.remove(Theme.DARK);
+    ? refs.body.classList.replace(Theme.LIGHT, Theme.DARK)
+    : refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
 }
